@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">The calculator "TEP"</string>
+    <string name="text_view_Vc_Formula">Vc = V * K </string>
+    <string name="text_view_Vc">Vс - Приведенный объем газа, m3 </string>
+    <string name="text_view_V">V - Объем газа измеренный счетчик, m3</string>
+    <string name="text_view_K">K - коэффициент для приведения к стандартным условия </string>
+    <string name="button_Vc_Gaz">Расчитать приведенный объём газа</string>
 </resources>
