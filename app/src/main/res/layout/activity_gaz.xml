@@ -14,12 +14,52 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_view_enter_V"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/text_view_enter_V" />
+
+                    <EditText
+                        android:id="@+id/edit_text_enter_V"
+                        android:layout_width="100dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:inputType="number" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/text_view_output_Vс"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/text_view_output_Vс" />
+
+            </LinearLayout>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:orientation="vertical"></LinearLayout>
         </TableRow>
 
         <TableRow
@@ -41,19 +81,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
                 <TextView
                     android:id="@+id/textView_Vc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/text_view_Vc" />
-
                 <TextView
                     android:id="@+id/textView_K"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/text_view_K" />
-
                 <TextView
                     android:id="@+id/textView_V"
                     android:layout_width="wrap_content"
