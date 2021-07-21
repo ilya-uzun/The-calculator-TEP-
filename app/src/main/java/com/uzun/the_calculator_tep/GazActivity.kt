@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.EditText
+import android.widget.Toast
 import com.uzun.the_calculator_tep.constants.GazConstants
 import com.uzun.the_calculator_tep.R
 
@@ -13,26 +14,31 @@ class GazActivity: AppCompatActivity() {
 
     lateinit var etV: EditText
     lateinit var tvOutputVc: TextView
-    lateinit var btnV: Button
+
      override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gaz)
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_gaz)
          val tvVcFormula = findViewById<TextView>(R.id.textView_Vc_Formula)
          val tvVc = findViewById<TextView>(R.id.textView_Vc)
          val tvV = findViewById<TextView>(R.id.textView_V)
          val tvK = findViewById<TextView>(R.id.textView_K)
-         val btnV = findViewById<Button>(R.id.button)
-         tvOutputVc = findViewById<TextView>(R.id.text_view_output_Vс)
          etV= findViewById<EditText>(R.id.edit_text_enter_V)
+         tvOutputVc = findViewById<TextView>(R.id.text_view_output_Vс)
 
-         btnV.setOnClickListener({
-             tvOutputVc.text = etV.text
-         })
-
-//         etV.addTextChangedListener(object :TextWatcher{
-//             override fub onTextCganged(s: )
-//         })
-    }
+         writeEtV()
 
 
-}
+    }//onCreate
+
+    private fun writeEtV(){
+        val warningMessage = "Введите значение"
+        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
+
+        etV.setOnClickListener {
+            if (etV.getText().toString().equals("")) { // проверка длины строки
+                toast.show()
+            } else tvOutputVc.text = etV.text
+        }
+    }//writeEtV
+
+}//GazActivity
