@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import com.uzun.the_calculator_tep.R
 
 class MainActivity : AppCompatActivity() {
     //Создание элементов
@@ -19,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onBtnGaz(view: View) {
-        val intent = Intent(this, GazActivity::class.java)
+        val intent = Intent(this, GasActivity::class.java)
         startActivity(intent)
     }
 }

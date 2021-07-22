@@ -1,16 +1,14 @@
 package com.uzun.the_calculator_tep
 
 import android.os.Bundle
-import android.text.TextWatcher
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.EditText
 import android.widget.Toast
-import com.uzun.the_calculator_tep.constants.GazConstants
-import com.uzun.the_calculator_tep.R
+import com.uzun.the_calculator_tep.constants.GasConstants
+import com.uzun.the_calculator_tep.calculation.Gas
 
-class GazActivity: AppCompatActivity() {
+class GasActivity: AppCompatActivity() {
 
     lateinit var etV: EditText
     lateinit var tvOutputVc: TextView
@@ -31,13 +29,19 @@ class GazActivity: AppCompatActivity() {
     }//onCreate
 
     private fun writeEtV(){
+        val gas = Gas()
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
 
         etV.setOnClickListener {
             if (etV.getText().toString().equals("")) { // проверка длины строки
                 toast.show()
-            } else tvOutputVc.text = etV.text
+            } else {
+                val edText = etV.text.toString() // Преодразовываем
+                GasConstants.COEFF.v = edText.toDouble()
+                gas.calculationValue()
+                tvOutputVc.text = GasConstants.VC.v.toString()
+            }
         }
     }//writeEtV
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uzun.the_calculator_tep.GazActivity">
+    tools:context="com.uzun.the_calculator_tep.GasActivity">
 
     <TableLayout
         android:id="@+id/tableLayout"
