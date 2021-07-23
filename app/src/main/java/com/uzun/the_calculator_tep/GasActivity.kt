@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.EditText
 import android.widget.Toast
-import com.uzun.the_calculator_tep.constants.GasConstants
+import com.uzun.the_calculator_tep.data.GasConstants
 import com.uzun.the_calculator_tep.calculation.Gas
 
 class GasActivity: AppCompatActivity() {

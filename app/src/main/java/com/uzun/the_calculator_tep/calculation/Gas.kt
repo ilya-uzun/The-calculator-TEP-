@@ -1,6 +1,6 @@
 package com.uzun.the_calculator_tep.calculation
 
-import com.uzun.the_calculator_tep.constants.GasConstants
+import com.uzun.the_calculator_tep.data.GasConstants
 
 class Gas {
     fun calculationValue(){

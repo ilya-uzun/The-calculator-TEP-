@@ -1,4 +1,4 @@
-package com.uzun.the_calculator_tep.constants
+package com.uzun.the_calculator_tep.data
 
 enum class GasConstants (var v: Double){
     VC(0.0),
