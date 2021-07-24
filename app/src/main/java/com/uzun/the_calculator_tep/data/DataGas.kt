@@ -20,7 +20,7 @@ data class DataGas(var temp: Double, var press: Double){
             temp = 0.1
             press = 0.1
         } else {
-            coeff = (1 / coeffCompressGas) * (p / pressGasStandart)  * (t / tempGasStandart)
+            coeff = (1 / coeffCompressGas) * (press / pressGasStandart)  * (temp / tempGasStandart)
         }
     }
 
