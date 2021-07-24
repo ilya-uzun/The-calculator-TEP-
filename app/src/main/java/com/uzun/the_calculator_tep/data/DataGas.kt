@@ -1,6 +1,6 @@
 package com.uzun.the_calculator_tep.data
 
-data class DataGas(var v: Double){
+data class DataGas(var temp: Double, var press: Double){
     var valueCoeff = 0.0
     var value = 0.0
     var coeff = 1.0
@@ -14,9 +14,15 @@ data class DataGas(var v: Double){
     }
 
     private fun calculationCoefficient(){
-        val p: Double = 1.0 // Измеренная даление дабавить через EditText, уточнить еденицы времмено в бар
-        val t: Double = 15.0 // Измеренная температура дабавить через EditText
-        coeff = (1 / coeffCompressGas) * (p / pressGasStandart)  * (t / tempGasStandart)
+
+        // проверка деления на  ноль
+        if (temp == 0.0 || press == 0.0) {
+            temp = 0.1
+            press = 0.1
+        } else {
+            coeff = (1 / coeffCompressGas) * (p / pressGasStandart)  * (t / tempGasStandart)
+        }
     }
-}
+
+}//DataGasDataGas
 
