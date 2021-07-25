@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.uzun.the_calculator_tep.data.GasConstants
 import com.uzun.the_calculator_tep.calculation.Gas
+import com.uzun.the_calculator_tep.data.DataGas
 
 class GasActivity: AppCompatActivity() {
 
@@ -29,7 +30,7 @@ class GasActivity: AppCompatActivity() {
     }//onCreate
 
     private fun writeEtV(){
-        val gas = Gas()
+        var gas = DataGas(1.0, 11.0)
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
 
@@ -38,9 +39,11 @@ class GasActivity: AppCompatActivity() {
                 toast.show()
             } else {
                 val edText = etV.text.toString() // Преодразовываем
-                GasConstants.COEFF.v = edText.toDouble()
+                 GasConstants.COEFF.v = edText.toDouble()
+                gas.setCoeff(edText.toDouble())
                 gas.calculationValue()
-                tvOutputVc.text = GasConstants.VC.v.toString()
+               // tvOutputVc.text = GasConstants.VC.v.toString()
+               tvOutputVc.text = gas.getValueCoeff().toString()
             }
         }
     }//writeEtV
