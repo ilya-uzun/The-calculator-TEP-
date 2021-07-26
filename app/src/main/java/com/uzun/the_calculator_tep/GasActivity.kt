@@ -30,7 +30,7 @@ class GasActivity: AppCompatActivity() {
     }//onCreate
 
     private fun writeEtV(){
-        var gas = DataGas(1.0, 11.0)
+        var gas = DataGas(1, 11)
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
 
@@ -40,10 +40,11 @@ class GasActivity: AppCompatActivity() {
             } else {
                 val edText = etV.text.toString() // Преодразовываем
                  GasConstants.COEFF.v = edText.toDouble()
-                gas.setCoeff(edText.toDouble())
+                gas.setCoeff(edText.toInt())
                 gas.calculationValue()
                // tvOutputVc.text = GasConstants.VC.v.toString()
-               tvOutputVc.text = gas.getValueCoeff().toString()
+                val tvOutput = gas.getValueCoeff().toString()
+               tvOutputVc.text = tvOutput
             }
         }
     }//writeEtV
