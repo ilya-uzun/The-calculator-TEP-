@@ -30,7 +30,7 @@ class GasActivity: AppCompatActivity() {
     }//onCreate
 
     private fun writeEtV(){
-        var gas = DataGas(1, 11)
+        var gas = DataGas(21.0, 1.4)
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
 
@@ -39,14 +39,17 @@ class GasActivity: AppCompatActivity() {
                 toast.show()
             } else {
                 val edText = etV.text.toString() // Преодразовываем
-                 GasConstants.COEFF.v = edText.toDouble()
-                gas.setCoeff(edText.toInt())
+                gas.setCoeff(edText.toDouble())
                 gas.calculationValue()
-               // tvOutputVc.text = GasConstants.VC.v.toString()
-                val tvOutput = gas.getValueCoeff().toString()
+                val tvOutput = gas.calculationValue().toString()
                tvOutputVc.text = tvOutput
             }
         }
     }//writeEtV
 
 }//GazActivity
+
+//Задачи
+//        Удалось сделать вывод результатов формулы
+//        считет не правильно
+//        Сделать од парраметров temp и press с EditText
