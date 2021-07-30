@@ -12,7 +12,11 @@ import com.uzun.the_calculator_tep.data.DataGas
 class GasActivity: AppCompatActivity() {
 
     lateinit var etV: EditText
+    lateinit var etTemp: EditText
+    lateinit var etPress: EditText
     lateinit var tvOutputVc: TextView
+    var temp: Double = 1.0
+    var gas = DataGas( writeEtTemp(), writeEtPress())
 
      override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
@@ -22,15 +26,16 @@ class GasActivity: AppCompatActivity() {
          val tvV = findViewById<TextView>(R.id.textView_V)
          val tvK = findViewById<TextView>(R.id.textView_K)
          etV= findViewById<EditText>(R.id.edit_text_enter_V)
+         etTemp= findViewById<EditText>(R.id.edit_text_enter_temp)
+         etPress = findViewById<EditText>(R.id.edit_text_enter_press)
          tvOutputVc = findViewById<TextView>(R.id.text_view_output_Vс)
 
          writeEtV()
 
-
     }//onCreate
-
+    // вво объема
     private fun writeEtV(){
-        var gas = DataGas(21.0, 1.4)
+
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
 
@@ -43,9 +48,30 @@ class GasActivity: AppCompatActivity() {
                 gas.calculationValue()
                 val tvOutput = gas.calculationValue().toString()
                tvOutputVc.text = tvOutput
+
             }
         }
     }//writeEtV
+
+    private fun writeEtTemp():Double{
+        val warningMessage = "Введите значение"
+        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
+        val edText = etTemp.text.toString()
+        etTemp.setOnClickListener {
+            if (etTemp.getText().toString().equals("")) toast.show()
+        }
+        return edText.toDouble()
+    }//writeEtPress
+
+    private fun writeEtPress():Double{
+        val warningMessage = "Введите значение"
+        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
+        val edText = etPress.text.toString()
+        etPress.setOnClickListener {
+            if (etPress.getText().toString().equals("")) toast.show()
+        }
+        return edText.toDouble()
+    }//writeEtPress
 
 }//GazActivity
 
