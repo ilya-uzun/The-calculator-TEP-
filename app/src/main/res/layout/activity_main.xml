@@ -20,6 +20,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/button_Vc_Gaz" />
+        <Button
+            android:id="@+id/button_GOST"
+            android:textColor="@color/light_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/button_GOST" />
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="90dp"

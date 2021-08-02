@@ -5,6 +5,7 @@
     <string name="text_view_V">V - Объем газа измеренный счетчик, m3</string>
     <string name="text_view_K">K - коэффициент для приведения к стандартным условия </string>
     <string name="button_Vc_Gaz">Расчитать приведенный объём газа</string>
+    <string name="button_GOST">Нормативные докуметы</string>
     <string name="text_view_enter_V">Введите измеренный объем газа, m3 :    </string>
     <string name="text_view_enter_T">Введите измеренную температуру газа, Гр :    </string>
     <string name="text_view_enter_P">Введите измеренное давление газа,Bar : </string>
