@@ -15,8 +15,8 @@ class GasActivity: AppCompatActivity() {
     lateinit var etTemp: EditText
     lateinit var etPress: EditText
     lateinit var tvOutputVc: TextView
-    var temp: Double = 1.0
-    var gas = DataGas( writeEtTemp(), writeEtPress())
+
+
 
      override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
@@ -29,8 +29,8 @@ class GasActivity: AppCompatActivity() {
          etTemp= findViewById<EditText>(R.id.edit_text_enter_temp)
          etPress = findViewById<EditText>(R.id.edit_text_enter_press)
          tvOutputVc = findViewById<TextView>(R.id.text_view_output_Vс)
-
          writeEtV()
+
 
     }//onCreate
     // вво объема
@@ -38,7 +38,7 @@ class GasActivity: AppCompatActivity() {
 
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
-
+        var gas = DataGas(writeEtTemp(), writeEtPress())
         etV.setOnClickListener {
             if (etV.getText().toString().equals("")) { // проверка длины строки
                 toast.show()
@@ -54,28 +54,27 @@ class GasActivity: AppCompatActivity() {
     }//writeEtV
 
     private fun writeEtTemp():Double{
-        val warningMessage = "Введите значение"
-        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
-        val edText = etTemp.text.toString()
-        etTemp.setOnClickListener {
-            if (etTemp.getText().toString().equals("")) toast.show()
-        }
+//        val warningMessage = "Введите значение"
+//        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
+        val edText = 1
+//        etTemp.setOnClickListener {
+//            if (etTemp.getText().toString().equals("")) toast.show()
+//        }
         return edText.toDouble()
+
+
+
     }//writeEtPress
 
     private fun writeEtPress():Double{
-        val warningMessage = "Введите значение"
-        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
-        val edText = etPress.text.toString()
-        etPress.setOnClickListener {
-            if (etPress.getText().toString().equals("")) toast.show()
-        }
+//        val warningMessage = "Введите значение"
+//        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
+        val edText = 2
+//        etPress.setOnClickListener {
+//            if (etPress.getText().toString().equals("")) toast.show()
+//        }
         return edText.toDouble()
     }//writeEtPress
 
 }//GazActivity
 
-//Задачи
-//        Удалось сделать вывод результатов формулы
-//        считет не правильно
-//        Сделать од парраметров temp и press с EditText
