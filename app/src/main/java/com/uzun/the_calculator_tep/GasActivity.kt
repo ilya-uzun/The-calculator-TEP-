@@ -5,9 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.EditText
 import android.widget.Toast
-import com.uzun.the_calculator_tep.data.GasConstants
-import com.uzun.the_calculator_tep.calculation.Gas
-import com.uzun.the_calculator_tep.data.DataGas
 
 class GasActivity: AppCompatActivity() {
 
@@ -38,7 +35,7 @@ class GasActivity: AppCompatActivity() {
 
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
-        var gas = DataGas(writeEtTemp(), writeEtPress())
+        var gas = com.uzun.the_calculator_tep.data.Gas(writeEtTemp(), writeEtPress())
         etV.setOnClickListener {
             if (etV.getText().toString().equals("")) { // проверка длины строки
                 toast.show()

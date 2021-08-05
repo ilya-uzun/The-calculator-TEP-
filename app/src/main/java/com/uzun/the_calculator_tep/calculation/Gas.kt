@@ -1,9 +1,9 @@
 package com.uzun.the_calculator_tep.calculation
 
-import com.uzun.the_calculator_tep.data.DataGas
+import com.uzun.the_calculator_tep.data.Gas
 //Удалить класс
 class Gas {
-    var gas : DataGas? = null
+    var gas : Gas? = null
 //    fun calculationValue(){
 //        calculationCoefficient()
 //        GasConstants.VALUE.v * GasConstants.COEFF.v

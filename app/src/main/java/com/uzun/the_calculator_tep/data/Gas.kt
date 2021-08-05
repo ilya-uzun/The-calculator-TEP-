@@ -1,12 +1,14 @@
 package com.uzun.the_calculator_tep.data
 
-data class DataGas(var temp: Double, var press: Double){
-    private var valueCoeff = 1.0
-    private var value = 2.0 // Измереный расход
-    private var coeff = 1.0
-    private var tempGasStandart = 20
-    private var pressGasStandart =  1.01325
-    private var coeffCompressGas = 0.9873
+class Gas(
+    private var temp: Double = 1.0,
+    private var press: Double = 1.0,
+    private var value: Double = 2.0,
+    private var coeff: Double = 1.0,
+    private var tempGasStandart: Double = 20.0,
+    private var pressGasStandart: Double =  1.01325,
+    private var coeffCompressGas: Double = 0.9873
+){
 
     fun calculationValue():Double{
         calculationCoefficient()
