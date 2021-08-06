@@ -28,9 +28,10 @@ class Gas(
                         /* Сеторы */
 
     //fun setValueCoeff(v:Double){valueCoeff = v}
+    fun setTemp(v:Double){temp = v}
+    fun setPress(v:Double){press = v}
     fun setValue(v:Double){value = v}
     fun setCoeff(v:Double){coeff = v}
-    //fun setTempGasStandart(v:Double){tempGasStandart = v}
     fun setPressGasStandart(v:Double){pressGasStandart = v}
     fun setCoeffCompressGas(v:Double){coeffCompressGas = v}
 

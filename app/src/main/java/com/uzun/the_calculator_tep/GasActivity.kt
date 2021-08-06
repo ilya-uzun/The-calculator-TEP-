@@ -40,23 +40,26 @@ class GasActivity: AppCompatActivity() {
             if (etV.getText().toString().equals("")) { // проверка длины строки
                 toast.show()
             } else {
+                var temp = writeEtTemp()
+                gas.setTemp(temp)
+                var press = writeEtPress()
+                gas.setTemp(press)
                 val edText = etV.text.toString() // Преодразовываем
                 gas.setCoeff(edText.toDouble())
                 gas.calculationValue()
                 val tvOutput = gas.calculationValue().toString()
-               tvOutputVc.text = tvOutput
-
+                tvOutputVc.text = tvOutput
             }
         }
     }//writeEtV
 
     private fun writeEtTemp():Double{
-//        val warningMessage = "Введите значение"
-//        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
+        val warningMessage = "Введите значение"
+        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
         val edText = 1
-//        etTemp.setOnClickListener {
-//            if (etTemp.getText().toString().equals("")) toast.show()
-//        }
+        etTemp.setOnClickListener {
+            if (etTemp.getText().toString().equals("")) toast.show()
+        }
         return edText.toDouble()
 
 
@@ -64,12 +67,12 @@ class GasActivity: AppCompatActivity() {
     }//writeEtPress
 
     private fun writeEtPress():Double{
-//        val warningMessage = "Введите значение"
-//        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
+        val warningMessage = "Введите значение"
+        val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
         val edText = 2
-//        etPress.setOnClickListener {
-//            if (etPress.getText().toString().equals("")) toast.show()
-//        }
+        etPress.setOnClickListener {
+            if (etPress.getText().toString().equals("")) toast.show()
+        }
         return edText.toDouble()
     }//writeEtPress
 
