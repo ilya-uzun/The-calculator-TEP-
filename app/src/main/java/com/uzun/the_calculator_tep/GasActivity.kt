@@ -36,14 +36,14 @@ class GasActivity: AppCompatActivity() {
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
         var gas = com.uzun.the_calculator_tep.data.Gas(writeEtTemp(), writeEtPress())
+        var temp = writeEtTemp()
+        gas.setTemp(temp)
+        var press = writeEtPress()
+        gas.setTemp(press)
         etV.setOnClickListener {
             if (etV.getText().toString().equals("")) { // проверка длины строки
                 toast.show()
             } else {
-                var temp = writeEtTemp()
-                gas.setTemp(temp)
-                var press = writeEtPress()
-                gas.setTemp(press)
                 val edText = etV.text.toString() // Преодразовываем
                 gas.setCoeff(edText.toDouble())
                 gas.calculationValue()
