@@ -47,7 +47,7 @@ class GasActivity: AppCompatActivity() {
                 val edText = etV.text.toString() // Преодразовываем
                 gas.setCoeff(edText.toDouble())
                 gas.calculationValue()
-                val tvOutput = gas.calculationValue().toString()
+                val tvOutput = gas.calculationCoefficient().toString()
                 tvOutputVc.text = tvOutput
             }
         }

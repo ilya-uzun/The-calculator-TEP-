@@ -15,14 +15,17 @@ class Gas(
        return  value * coeff
     }
 
-    private fun calculationCoefficient() {
+    private fun calculationCoefficient():Double {
         // проверка деления на  ноль
+        var valueP: Double = 1.0
         if (temp == 0.0 || press == 0.0) {
             temp = 0.1
             press = 0.1
+
         } else {
-            setValue((1 / coeffCompressGas) * (press / pressGasStandart)  * (temp / tempGasStandart))
+             valueP = ((1 / coeffCompressGas) * (press / pressGasStandart)  * (temp / tempGasStandart)) * coeff
         }
+        return valueP
     }
 
                         /* Сеторы */
