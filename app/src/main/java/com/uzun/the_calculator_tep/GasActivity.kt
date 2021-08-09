@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.EditText
 import android.widget.Toast
+import com.uzun.the_calculator_tep.data.Gas
 
 class GasActivity: AppCompatActivity() {
 
@@ -35,38 +36,37 @@ class GasActivity: AppCompatActivity() {
 
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
-        var gas = com.uzun.the_calculator_tep.data.Gas(writeEtTemp(), writeEtPress())
-        var temp = writeEtTemp()
-        gas.setTemp(temp)
-        var press = writeEtPress()
-        gas.setTemp(press)
+
+        var gas = Gas()
+        writeEtTemp(gas)
+
         etV.setOnClickListener {
             if (etV.getText().toString().equals("")) { // проверка длины строки
                 toast.show()
             } else {
                 val edText = etV.text.toString() // Преодразовываем
                 gas.setCoeff(edText.toDouble())
-                gas.calculationValue()
                 val tvOutput = gas.calculationCoefficient().toString()
                 tvOutputVc.text = tvOutput
             }
         }
     }//writeEtV
 
-    private fun writeEtTemp():Double{
+    private fun writeEtTemp(gas: Gas){
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
-        val edText = 1
+
         etTemp.setOnClickListener {
-            if (etTemp.getText().toString().equals("")) toast.show()
+            if (etTemp.getText().toString().equals("")) {
+                toast.show()
+            } else {
+                val edTextTemp = etTemp.text.toString() // Преодразовываем
+                gas.setTemp(edTextTemp.toDouble())
+            }
         }
-        return edText.toDouble()
-
-
-
     }//writeEtPress
 
-    private fun writeEtPress():Double{
+    private fun writeEtPress(gas: Gas):Double{
         val warningMessage = "Введите значение"
         val toast = Toast.makeText(applicationContext, warningMessage, Toast.LENGTH_SHORT)
         val edText = 2

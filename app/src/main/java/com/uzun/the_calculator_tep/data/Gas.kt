@@ -15,7 +15,7 @@ class Gas(
        return  value * coeff
     }
 
-    private fun calculationCoefficient():Double {
+    fun calculationCoefficient():Double {
         // проверка деления на  ноль
         var valueP: Double = 1.0
         if (temp == 0.0 || press == 0.0) {
@@ -38,5 +38,7 @@ class Gas(
     fun setPressGasStandart(v:Double){pressGasStandart = v}
     fun setCoeffCompressGas(v:Double){coeffCompressGas = v}
 
+    fun getTemp():Double {return temp}
+    fun getPress():Double {return press}
 }//DataGasDataGas
 
